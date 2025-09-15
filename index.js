@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
 
   socket.on('chat message', (room,msg) => {
     if(!room){
-       return io.except('room').emit(msg);
+       return io.except('room').emit('chat message',msg);
 
     }
     else if(room=="exit"){
